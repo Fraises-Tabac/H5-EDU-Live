@@ -1,0 +1,167 @@
+﻿<!doctype html>
+<html><!-- InstanceBegin template="/Templates/dwt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>ELearning在线测评与学习平台</title>
+<link rel="stylesheet" href="assets/css/course.css"/>
+<script src="assets/js/jquery-1.8.0.min.js"></script>
+<link rel="stylesheet" href="assets/css/tab.css" media="screen">
+<script src="assets/js/jquery.tabs.js"></script>
+<script src="assets/js/mine.js"></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+
+</head>
+
+<body>
+
+<div class="head" id="fixed">
+	<div class="nav">
+    	<span class="navimg"><a href="index.html"><img border="0" src="assets/images/logo/logo.png"></a></span>
+        <ul class="nag">
+        	<li><a href="../../../../../Downloads/664179701/FileRecv/courselist.html" class="link1 current">课程</a></li>
+            <li><a href="articlelist.html" class="link1">资讯</a></li>
+            <li><a href="teacherlist.html" class="link1">讲师</a></li>
+            <li><a href="exam_index.html" class="link1" target="_blank">题库</a></li>
+            <li><a href="askarea.html" class="link1" target="_blank">问答</a></li>
+            
+        </ul>
+        <span class="massage">
+            <!--<span class="select">
+        	<a href="#" class="sort">课程</a>
+        	<input type="text" value="关键字"/>
+            <a href="#" class="sellink"></a>
+            <span class="sortext">
+            	<p>课程</p>
+                <p>题库</p>
+                <p>讲师</p>
+            </span>
+        </span>--> 
+        	<!--未登录-->
+        	<span class="exambtn_lore">
+                 <a class="tkbtn tklog" href="login.html">登录</a>
+                 <a class="tkbtn tkreg" href="register.html">注册</a>
+            </span>
+            <!--登录后-->
+            <!--<div class="logined">
+                <a href="mycourse.html"  onMouseOver="logmine()" style="width:70px" class="link2 he ico" target="_blank">sherley</a>
+                <span id="lne" style="display:none" onMouseOut="logclose()" onMouseOver="logmine()">
+                    <span style="background:#fff;">
+                        <a href="mycourse.html" style="width:70px; display:block;" class="link2 he ico" target="_blank">sherley</a>
+                    </span>
+                    <div class="clearh"></div>
+                    <ul class="logmine" >
+                        <li><a class="link1" href="#">我的课程</a></li>
+                        <li><a class="link1" href="#">我的题库</a></li>
+                        <li><a class="link1" href="#">我的问答</a></li>
+                        <li><a class="link1" href="#">退出</a></li>
+                    </ul>
+                </span>
+            </div>-->
+            
+        </span>
+    </div>
+</div>
+<!-- InstanceBeginEditable name="EditRegion1" -->
+<div id="courselecture" class="coursecont">
+</div>
+<!-- InstanceEndEditable -->
+
+
+<div class="clearh"></div>
+<div class="foot">
+<div class="fcontainer">
+      <div class="fmenu">
+	     <p><a href="#">关于我们</a> | <a href="#">联系我们</a> | <a href="#">优秀讲师</a> | <a href="#">帮助中心</a> | <a href="#">意见反馈</a> | <a href="#">加入我们</a></p>
+      </div>
+      <div class="copyright">      
+        <div><a href="/">Elearning</a>所有&nbsp;鲁ICP备121212121号-9</div>
+      </div>
+    </div>
+</div>
+<!--右侧浮动-->
+
+
+<script>
+	$.ajax({
+		url: "/test",
+		type: "post",
+		data: "",
+		dataType: "json",
+		contentType: "application/json",
+		success:function (tcourseList) {
+			for (var tcourse in tcourseList)
+			$("#courselecture").append("<div class='coursecont'>"+
+					"<div class='coursepic tecti'>" +
+					"<div class='teaimg'><img src='"+lecture.lecturePic+"' width='150'></div>" +
+					"<div class='teachtext'>" +
+					"<h3>"+lecture.name+"<strong>"+lecture.class+"</strong></h3>" +
+					"<h4>个人简介</h4>" +
+					"<p>"+lecture.lecturepage+"</p>" +
+					"<h4>授课风格</h4>" +
+					"<p>"+lecture.lecturestyle+"</p></div>" +
+					"<div class='clearh'></div></div>" +
+					"<div class='clearh'></div>" +
+					"<div class='tcourselist'>" +
+					"<h3 class='righttit' style='padding-left:50px;'>在教课程</h3>" +
+					"<ul class='tcourseul'>" +
+					"<li><span class='courseimg tcourseimg'><a href='coursecont.html' target='_blank'><img width='230' src='"+lecture.coursePic+"'></a> </span>" +
+					"<span class='tcoursetext'>" +
+					"<h4><a href='coursecont.html' target='_blank' class='teatt'>"+lecture.class+"</a><a class='state'>"+lecture.coursestatus+"</a> </h4>" +
+					"<p class='teadec'>"+lecture.coursepage+"</p>" +
+					"<p class='courselabel clock'>"+lecture.courselength+"</p></span>" +
+					"<div style='height:0' class='clearh'></div></li>" +
+					"<div class='clearh'></div>" +
+					"</ul></div>" +
+					"<div class='clearh'></div></div>");
+
+
+		},
+		error: function (XMLHttpRequest, courseStatus) {
+			console.log(XMLHttpRequest.status);
+			console.log(XMLHttpRequest.readyState);
+			console.log(textStatus);
+
+		}
+	});
+
+
+	/*var lecture={};
+	lecture.lecturePic="assets/images/character/teacher.jpg";
+	lecture.name="按客户";
+	lecture.class="数学";
+	lecture.lecturepage="fdfbgdgfhfgh风格化风格化发TV不过回复邮件韩国";
+	lecture.lecturestyle="很好dA;ihdslkahsdkhasdaHkjhkasb看见百思不得姐";
+	lecture.coursePic="assets/images/course/c8.jpg";
+	lecture.courselength="10min";
+	lecture.coursepage="撒俺看不懂那是可能的看，阿瑟东爱丽丝内华达";
+	lecture.coursestatus="更新中";
+	$("#courselecture").append("<div class='coursecont'>"+
+			"<div class='coursepic tecti'>" +
+			"<div class='teaimg'><img src='"+lecture.lecturePic+"' width='150'></div>" +
+			"<div class='teachtext'>" +
+			"<h3>"+lecture.name+"<strong>"+lecture.class+"</strong></h3>" +
+			"<h4>个人简介</h4>" +
+			"<p>"+lecture.lecturepage+"</p>" +
+			"<h4>授课风格</h4>" +
+			"<p>"+lecture.lecturestyle+"</p></div>" +
+			"<div class='clearh'></div></div>" +
+			"<div class='clearh'></div>" +
+			"<div class='tcourselist'>" +
+			"<h3 class='righttit' style='padding-left:50px;'>在教课程</h3>" +
+			"<ul class='tcourseul'>" +
+			"<li><span class='courseimg tcourseimg'><a href='coursecont.html' target='_blank'><img width='230' src='"+lecture.coursePic+"'></a> </span>" +
+			"<span class='tcoursetext'>" +
+			"<h4><a href='coursecont.html' target='_blank' class='teatt'>"+lecture.class+"</a><a class='state'>"+lecture.coursestatus+"</a> </h4>" +
+			"<p class='teadec'>"+lecture.coursepage+"</p>" +
+			"<p class='courselabel clock'>"+lecture.courselength+"</p></span>" +
+			"<div style='height:0' class='clearh'></div></li>" +
+			"<div class='clearh'></div>" +
+			"</ul></div>" +
+			"<div class='clearh'></div></div>");*/
+</script>
+</body>
+
+<!-- InstanceEnd --></html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JWPlayer</title>
+        <script type="text/javascript" src="/stat/assets/js/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="/stat/assets/js/jwplayer.js"></script>
+    </head>
+
+    <body>
+        <div id="player"></div>
+        <script>
+            let url = window.location.href;
+            let index = url.lastIndexOf("=");
+            let courseId = parseInt(url.slice(index + 1));
+            $.ajax({
+                url: "/course/live/getStream",
+                type: "post",
+                data: {"courseId": courseId},
+                dataType: "json",
+                success:function (name) {
+                    let script = "<script type='text/javascript'>" +
+                        "jwplayer('player').setup({" +
+                        "flashplayer: '/stat/assets/js/player.swf'," +
+                        "image: '/stat/assets/images/preview.jpg'," +
+                        "file: '" + name.data + "'," +
+                        "streamer: 'rtmp://39.106.107.209/oflaDemo'" +
+                        "});" +
+                        "\<\/script>";
+                    $("#player").html(script);
+                }
+            })
+        </script>
+    </body>
+</html>

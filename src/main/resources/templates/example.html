@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dynamicDiv{
+
+        }
+        .courseDiv{
+            left  :
+            top:
+        }
+
+    </style>
+    <script>
+        function loadContent() {
+            $.ajax({
+                type : "POST", //提交方式
+
+                url : "/course",//路径
+
+                data : "",
+
+                success : function(courses) {//返回数据根据结果进行相应的处理  course{name,length,lecture}
+                    // let dom = $("#courseDiv");
+                    //
+                    // for(let i = 0; i < courses.size(); i++)
+                    //
+                    //     dom.html("<p class='courseP'>"+courses[i].name+"</p>" +
+                    //         "<p>"+courses[0].length+"</p>");
+
+
+                    let dom = $("#dynamicDiv");
+                    for (let i = 0; i < courses.size(); i++)
+                            dom.html("<div id ='"+courses[i].courseId+"' class='courseDiv' onclick='load("+courses[i].courseId+")'></div>");
+                },
+                error : function () {
+
+
+                }
+            })
+        }
+
+        function load(i){
+            EL
+        }
+    </script>
+</head>
+<body>
+<div>
+    welcome!
+    <button onclick="loadContent()"></button>
+</div>
+
+<div id="dynamicDiv">
+    <div id="1" class="courseDiv" onclick="load(1)">
+    </div>
+    <div id="2" class="courseDiv" onclick="load(2)">
+    </div>
+    <div id="3" class="courseDiv" onclick="load(3)">
+    </div>
+    <div id="4" class="courseDiv" onclick="load(4)">
+    </div>
+    <div id="5" class="courseDiv" onclick="load(5)">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>直播</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../stat/assets/css/layui.css">
+		<style>
+			.layui-container {
+				float: left;
+				margin-left: 3%;
+				margin-top: 20px;
+			}
+			
+			.layui-container .layui-row {
+				width: 50%;
+				float: left;
+			}
+			
+			.data_commen {
+				margin-top: 10px;
+				text-align: center;
+			}
+			
+			.data_commen span {
+				display: inline-block;
+				width: 96%;
+				padding: 25% 0;
+				font-size: 30px;
+				background: #ffffff;
+			}
+			
+			body {
+				background: #DDDDDD;
+			}
+			
+			.layui-btn {
+				width: 96%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="layui-row layui-col-space1">
+			<div class="layui-col-md2">
+				<div class="grid-demo grid-demo-bg1">
+					<div class="data_commen">
+						<span>21</span>
+						<div class="layui-btn layui-btn-normal">
+							<p>在线学生</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md2">
+				<div class="grid-demo">
+					<div class="data_commen">
+						<span>21</span>
+						<div class="layui-btn layui-btn-normal">
+							<p>在线教师</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md2">
+				<div class="grid-demo grid-demo-bg1">
+					<div class="data_commen">
+						<span>21</span>
+						<div class="layui-btn layui-btn-normal">
+							<p>直播视频</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-row layui-col-space1">
+			<div class="layui-col-md2">
+				<div class="grid-demo grid-demo-bg1">
+					<div class="data_commen">
+						<span>21</span>
+						<div class="layui-btn layui-btn-normal">
+							<p>浏览量（单位：人次）</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md2">
+				<div class="grid-demo">
+					<div class="data_commen">
+						<span>21</span>
+						<div class="layui-btn layui-btn-normal">
+							<p>浏览量（单位：人次）</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md2">
+				<div class="grid-demo grid-demo-bg1">
+					<div class="data_commen">
+						<span>21</span>
+						<div class="layui-btn layui-btn-normal">
+							<p>今日浏览量（单位：人次）</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../stat/assets/js/jquery.js"></script>
+		<script src="../stat/assets/js/echarts.js"></script>
+		<script src="../stat/assets/js/layui.js"></script>
+		<script>
+			//JavaScript代码区域
+			layui.use(['element', 'layer'], function() {
+				var element = layui.element;
+				var layer = layui.layer;
+				//一些事件监听
+				element.on('tab(demo)', function(data) {
+					layer.msg('切换了：' + this.innerHTML);
+
+				});
+			});
+
+			$(document).ready(function() {
+				$('.leftMain a').on("click", function(e) {
+					e.preventDefault();
+					var href = $(this).attr('href');
+					var iframe = $('#rightMain').attr("src", href);
+				})
+			})
+		</script>
+	</body>
+
+</html>

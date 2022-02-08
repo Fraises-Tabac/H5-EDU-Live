@@ -1,0 +1,157 @@
+@charset "utf-8";
+/*选项卡*/
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a,img {
+	border: 0;
+}
+
+body {
+	height: 100%;
+}
+
+#title {
+	width: 300px;
+	margin: 3% auto 0;
+}
+
+#title h2 {
+	font-size: 18px;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 0 auto;
+	background: #f8f8f8;
+	border: 1px solid #a3a3a3;
+	padding: 20px 20px 50px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+#wrapper h3 {
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	margin: 20px 0;
+}
+/* box */
+.box {
+	width: 700px;
+	margin: 10px auto 0;
+}
+
+.box1 {
+	width: 100%
+}
+
+.tab_menu {
+	overflow: hidden;
+}
+
+.tab_menu.tabul {
+	width: 630px;
+	margin: 0 auto
+}
+
+.tab_menu.tabul li {
+	width: 150px;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+	background: #fff;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-size: 18px;
+	font-weight: normal;
+	margin-right: 5px;
+}
+
+.tab_menu li {
+	width: 70px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	background: #fff;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold
+}
+
+.tab_menu li.current,upload {
+	color: #fff;
+	background: #fb5e55;
+}
+
+.tab_menu li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.tab_menu li.current a {
+	color: #333;
+}
+
+.tab_box {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.tab_box li {
+	overflow: hidden;
+}
+
+.tab_box li span {
+	font-family: "微软雅黑";
+	font-weight: 400;
+}
+
+.tab_box .hide {
+	display: none;
+}
+
+/*登录注册弹出框选项卡*/
+.demo3.rlog {
+	width: 300px;
+}
+
+.tab_menu.rlog {
+	width: 443px;
+}
+
+.tab_menu.rlog li {
+	width: 80px;
+	background: none;
+	font-size: 22px;
+	text-align: left;
+	height: 40px;
+	line-height: 45px;
+	font-weight: normal;
+	padding-left: 20px;
+}
+
+.tab_menu.rlog li.current {
+	color: #3eb0e0;
+	font-weight: bold;
+}
+
+.demo3.rlog .tab_menu.rlog {
+	border-bottom: 1px solid #ccc;
+}

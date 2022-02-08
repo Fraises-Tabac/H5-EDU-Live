@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>个人主页</title>
+        <script type="application/javascript" src="jquery-3.4.1.js"></script>
+        <script>
+            function loadExams() {
+                $.ajax({
+                    url:"/homepage-exam/summaries",
+                    type:"post",
+                    data:"",
+                    dataType:"json",
+                    contentType:"application/json",
+                    success:function (examList) {
+                        var examsDiv = $("#exams");
+                        for (var exam in examList)
+                            examsDiv.append($("<a href='/homepage-exam/exam?=" + exam.courseId + "'>" +
+                                "<p>" + exam.name + "</p>" +
+                                "<img src='"+exam.coursePic+"'/>" +
+                                "<p>考试发布时间：" + exam.time + "</p>" +
+                                "<p>满分：" + exam.maxScore + "</p>" +
+                                "<p>您的得分：" + exam.totalScore + "</p></a>"));
+                    },
+                    error: function (XMLHttpRequest, textStatus) {
+                        console.log(XMLHttpRequest.status);
+                        console.log(XMLHttpRequest.readyState);
+                        console.log(textStatus);
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body onload="loadExams()">
+        <header>
+
+        </header>
+
+        <div id="exams">
+
+        </div>
+    </body>
+</html>

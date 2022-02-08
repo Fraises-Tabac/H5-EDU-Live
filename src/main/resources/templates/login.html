@@ -1,0 +1,107 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Elearning在线测评与学习平台</title>
+
+<link rel="stylesheet" type="text/css" href="/stat/assets/css/course.css"/>
+<link rel="stylesheet" type="text/css" href="/stat/assets/css/register-login.css"/>
+<script type="text/javascript" src="/stat/assets/js/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/stat/assets/css/tab.css" media="screen">
+<script type="text/javascript" src="/stat/assets/js/jquery.tabs.js"></script>
+<script type="text/javascript" src="/stat/assets/js/mine.js"></script>
+    <script type="text/javascript" src="/stat/assets/js/login.js"></script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div class="head" id="fixed">
+	<div class="nav">
+        <span class="navimg"><a href="index.html"><img border="0" src="/stat/assets/images/logo/logo.png"></a></span>
+        <ul class="nag">
+            <li><a href="courselist.html" class="link1 current">课程</a></li>
+            <li><a href="articlelist.html" class="link1">资讯</a></li>
+            <li><a href="teacherlist.html" class="link1">讲师</a></li>
+            <li><a href="exam_index.html" class="link1" target="_blank">题库</a></li>
+            <li><a href="askarea.html" class="link1" target="_blank">问答</a></li>
+        </ul>
+        <span class="massage">
+            <!--<span class="select">
+        	<a href="#" class="sort">课程</a>
+        	<input type="text" value="关键字"/>
+            <a href="#" class="sellink"></a>
+            <span class="sortext">
+            	<p>课程</p>
+                <p>题库</p>
+                <p>讲师</p>
+            </span>
+        </span>--> 
+        	<!--未登录-->
+        	<span class="exambtn_lore">
+                 <a class="tkbtn tklog" href="login">登录</a>
+                 <a class="tkbtn tkreg" href="register.html">注册</a>
+            </span>
+        </span>
+    </div>
+</div>
+<!-- InstanceBeginEditable name="EditRegion1" -->
+<div class="login" style="background:url(/stat/assets/images/register/12.jpg) right center no-repeat #fff">
+<h2>登录</h2>
+<form method="post" th:action = "@{/login}" style="width:600px">
+<div>
+    <p class="formrow">
+    <label class="control-label"  for="nickname">帐号</label>
+    <input type="text" id ="nickname" name="txtUserCd">
+    </p>
+    <span class="text-danger" id="name_check">请输入Email地址 / 用户昵称</span>
+</div>
+<div>
+    <p class="formrow">
+    <label class="control-label"  for="password">密码</label>
+    <input type="password" id="password" name="txtUserPwd">
+    </p>
+    <p class="help-block"><span class="text-danger" id="password_check">请输入密码</span></p>
+</div>
+<div class="loginbtn">
+	<label><input type="checkbox"  checked="checked"> <span class="jzmm">记住密码</span> </label>&nbsp;&nbsp;
+    <button type="submit" id="login">登录</button>
+    
+</div>
+<div class="loginbtn lb">
+   <a href="/register" class="link-muted">还没有账号？立即免费注册</a>
+   <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>   
+   <a href="forgetpassword.html" class="link-muted">找回密码</a>
+</div>
+</form>
+<div class="hezuologo">
+    <span class="hezuo">使用合作网站账号登录</span>
+<!--    <div class="hezuoimg">-->
+<!--    <img src="assets/images/hezuoqq.png" class="hzqq" title="QQ" width="40" height="40"/>-->
+<!--    <img src="assets/images/hezuowb.png" class="hzwb" title="微博" width="40" height="40"/>-->
+<!--    </div>-->
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+
+
+<!--右侧浮动-->
+<div class="rmbar">
+	<span class="barico qq" style="position:relative">
+	<div  class="showqq">
+	   <p>官方客服QQ:<br>335049335</p>
+	</div>
+	</span>
+<!--    <span class="barico em" style="position:relative">-->
+<!--	  <img src="assets/images/num.png" width="75" class="showem">-->
+<!--	</span>-->
+<!--    <span class="barico wb" style="position:relative">-->
+<!--	  <img src="assets/images/wb.png" width="75" class="showwb">-->
+<!--	</span>-->
+    <span class="barico top" id="top">置顶</span>
+</div>
+</body>
+
+<!-- InstanceEnd --></html>

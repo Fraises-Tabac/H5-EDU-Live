@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ELearning在线测评与学习平台</title>
+        <link rel="stylesheet" type="text/css" href="/stat/assets/css/course.css"/>
+        <link rel="stylesheet" type="text/css" href="/stat/assets/css/tab.css" media="screen">
+<!--        <link rel="stylesheet" href="/stat/assets/css/style.css"/>-->
+
+        <script type="text/javascript" src="/stat/assets/js/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="/stat/assets/js/jquery.tabs.js"></script>
+        <script type="text/javascript" src="/stat/assets/js/mine.js"></script>
+        <script>
+            function search() {
+                let keywords = $("#key").val();
+                $.ajax({
+                    url: "/search?keywords=" + keywords + "&type=course",
+                    data: "",
+                    success: function (response) {
+                        alert(response)
+                    },
+                    error: function (XMLHttpRequest, textStatus) {
+                        console.log(XMLHttpRequest.status);
+                        console.log(XMLHttpRequest.readyState);
+                        console.log(textStatus);
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="head" id="fixed">
+            <div class="nav">
+                <span class="navimg"><a href="index.html"><img border="0" src="/stat/assets/images/logo/logo.png"></a></span>
+                <ul class="nag">
+                    <li><a href="/courseList" class="link1 current">课程</a></li>
+                    <li><a href="articlelist.html" class="link1">资讯</a></li>
+                    <li><a href="teacherlist.html" class="link1">讲师</a></li>
+                    <li><a href="exam_index.html" class="link1" target="_blank">题库</a></li>
+                    <li><a href="askarea.html" class="link1" target="_blank">论坛</a></li>
+                </ul>
+
+                <span id="status" class="massage">
+                    <span id="lne" style="display:none" onMouseOut="logclose()" onMouseOver="logmine()">
+                        <span id="dark" style="background:#fff;"></span>
+                        <div class="clearh"></div>
+                        <ul class="logmine">
+                            <li><a class="link1" href="#">我的课程</a></li>
+                            <li><a class="link1" href="#">我的题库</a></li>
+                            <li><a class="link1" href="#">我的问答</a></li>
+                            <li><a class="link1" href="/logout">退出</a></li>
+                        </ul>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="coursecont">
+            <div class="courseleft">
+            <span class="select">     	
+              <input id="key" type="text" value="请输入关键字" class="pingjia_con"/>
+              <button type="button" class="sellink" onclick="search()"></button>
+            </span>
+                <ul class="courseul" id="searchcourseul">
+                    <li class="curr" style="border-radius:3px 3px 0 0;background:#fb5e55;"><h3 style="color:#fff;"><a href="#" class="whitea">全部课程</a>
+                    </h3>
+                    <li>
+                        <h4>财会金融</h4>
+                        <ul class="sortul">
+                            <li class="course_curr"><a href="#">会计从业证</a></li>
+                            <li><a href="#">初级会计职称</a></li>
+                            <li><a href="#">中级会计职称</a></li>
+                            <li><a href="#">会计高级职称</a></li>
+                            <li><a href="#">注册会计师</a></li>
+                            <li><a href="#">经济师</a></li>
+                        </ul>
+                        <div class="clearh"></div>
+                    </li>
+                    <li>
+                        <h4>计算机</h4>
+                        <ul class="sortul">
+                            <li><a href="#">C语言</a></li>
+                            <li><a href="#">JAVA</a></li>
+                            <li><a href="#">.NET</a></li>
+                            <li><a href="#">PHP</a></li>
+                        </ul>
+                        <div class="clearh"></div>
+                    </li>
+                </ul>
+                <div style="height:20px;border-radius:0 0 5px 5px; background:#fff;box-shadow:0 2px 4px rgba(0, 0, 0, 0.1)"></div>
+            </div>
+            <div class="courseright">
+                <ul id="courseulr"></ul>
+            </div>
+        </div>
+        </div>
+
+        <div class="clearh"></div>
+
+        <div class="foot">
+            <div class="fcontainer">
+                <div class="fmenu">
+                    <p><a href="#">关于我们</a> | <a href="#">联系我们</a> | <a href="#">优秀讲师</a> | <a href="#">帮助中心</a> | <a href="#">意见反馈</a>
+                        | <a href="#">加入我们</a></p>
+                </div>
+                <div class="copyright">
+                    <div><a href="/">E-learning</a>所有&nbsp;鲁888888888</div>
+                </div>
+            </div>
+        </div>
+        <!--右侧浮动-->
+        <div class="rmbar">
+            <span class="barico qq" style="position:relative">
+            <div class="showqq">
+               <p>官方客服QQ:<br>335049335</p>
+            </div>
+            </span>
+            <span class="barico top" id="top">置顶</span>
+        </div>
+        
+        <script>
+            $.ajax({
+                url: "/whoami",
+                type: "post",
+                data: "",
+                dataType: "json",
+                success: function (username) {
+                    $("#status").prepend("<a href='mycourse.html' onMouseOver='logmine()' style='width:70px' class='link2 he ico' target='_blank'>" + username.data + "</a>");
+                    $("#dark").append("<a href='mycourse.html' style='width:70px; display:block;' class='link2 he ico' target='_blank'>" + username.data + "</a>");
+                },
+                error: function (XMLHttpRequest, textStatus) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                    $("#status").prepend("<span class='exambtn_lore'>" +
+                        "                 <a class='tkbtn tklog' href='/login'>登录</a>" +
+                        "                 <a class='tkbtn tkreg' href='/register'>注册</a>" +
+                        "            </span>");
+                }
+            });
+        
+            $.ajax({
+                    url: "/course/list",
+                    type: "post",
+                    data: "",
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (courseList) {
+                        for (let i = 0; i < courseList.length; i++) {
+                            let course = courseList[i];
+                            let hour = Math.floor(course.duration / 3600);
+                            let min = Math.floor((course.duration - 3600 * hour) / 60);
+                            let sec = course.duration - 3600 * hour - 60 * min;
+                            let duration = hour + ":" + min + ":" + sec;
+                            $("#courseulr").append("<li><div class='courselist'>" +
+                                "<img src='" + course.pic + "' title='" + course.depiction + "'/>" +
+                                "<p class='courTit'><a href='/course?courseId=" + course.courseId + "'>" + course.name + "</a></p>" +
+                                "<div class='gray'>" +
+                                "<span> " + duration + "</span>" +
+                                "</div>" +
+                                "<p class='sp1'><a href='/teacher/info?teacherid=" + course.teacher_id + "'>讲师:" + course.lecture + "</a></p></div></li>");
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus) {
+                        console.log(XMLHttpRequest.status);
+                        console.log(XMLHttpRequest.readyState);
+                        console.log(textStatus);
+                    }
+                }
+            );
+        </script>
+    </body>
+</html>
+<script>
+    function logmine() {
+        document.getElementById("lne").style.display = "block";
+    }
+
+    function logclose() {
+        document.getElementById("lne").style.display = "none";
+    }
+
+    /*右侧客服飘窗*/
+    $(".label_pa li").click(function () {
+        $(this).siblings("li").find("span").css("background-color", "#fff").css("color", "#666");
+        $(this).find("span").css("background", "#fb5e55").css("color", "#fff");
+    });
+    $(".em").hover(function () {
+        $(".showem").toggle();
+    });
+    $(".qq").hover(function () {
+        $(".showqq").toggle();
+    });
+    $(".wb").hover(function () {
+        $(".showwb").toggle();
+    });
+    $("#top").click(function () {
+        if (scroll === "off") return;
+        $("html,body").animate({
+                scrollTop: 0
+            }, 600);
+    });
+</script>

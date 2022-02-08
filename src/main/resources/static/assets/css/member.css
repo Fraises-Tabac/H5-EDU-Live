@@ -1,0 +1,705 @@
+@charset "utf-8";
+/**********个人中心样式************/
+.membertab {
+	width: 1100px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+/*****************左侧菜单****************/
+.memblist {
+	width: 220px;
+	float: left;
+	border: 1px solid #DBDBDB;
+	padding-top: 20px;
+	background: #fff;
+	border-radius: 5px
+}
+
+.membcont {
+	width: 860px;
+	float: right;
+	border: 1px solid #CCC;
+	min-height: 600px;
+	padding-bottom: 20px;
+	background: #fff;
+	border-radius: 5px
+}
+
+.memdiv1 {
+	border: 1px solid #CCC;
+	min-height: 200px;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.memdiv2 {
+	border: 1px solid #CCC;
+	min-height: 200px;
+	border-radius: 5px;
+	background: #fff;
+	width: 430px;
+	float: left
+}
+
+.memdiv3 {
+	border: 1px solid #CCC;
+	min-height: 200px;
+	border-radius: 5px;
+	background: #fff;
+	width: 430px;
+	float: right
+}
+
+.memb {
+	width: 220px;
+	text-align: center;
+}
+
+.membhead {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.membhead div img {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
+
+.memb ul {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.memb ul li {
+	text-align: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	padding-left: 50px;
+}
+
+.memb ul li a {
+	display: block;
+	padding-left: 30px;
+	background: url(../images/smallicon/wsxx_bg.png) no-repeat
+}
+
+.memb .currnav{
+	background: #fb5e55;
+}
+
+.memb .currnav a {
+	background: url(../images/smallicon/wsxx_bghover.png) no-repeat;
+}
+
+.memb .currnav a:link,.memb .currnav a:visited {
+	color: #fff;
+}
+
+.memb ul li a:hover {
+	background: url(../images/smallicon/wsxx_bghover.png) no-repeat
+}
+
+.memb ul li a.mb1 {
+	background-position: 0 -25px;
+}
+
+.memb ul li a.mb2 {
+	background-position: 0 -182px;
+}
+
+.memb ul li a.mb3 {
+	background-position: 0 -961px;
+}
+
+.memb ul li a.mb4 {
+	background-position: 0 -102px;
+}
+
+.memb ul li a.mb5 {
+	background-position: 0 -182px;
+}
+
+.memb ul li a.mb6 {
+	background-position: 0 -30px;
+}
+
+.memb ul li a.mb7 {
+	background-position: 0 -1134px;
+}
+
+.memb ul li a.mb8 {
+	background-position: 0 -30px;
+}
+
+.memb ul li a.mb9 {
+	background-position: 0 -312px;
+}
+
+.memb ul li a.mb10 {
+	background-position: 0 -966px;
+}
+
+.memb ul li a.mb11 {
+	background-position: 0 -107px;
+}
+
+.memb ul li a.mb14 {
+	background-position: 0 -107px;
+}
+
+.memb ul li a.mb12 {
+	background-position: 0 -142px;
+}
+
+.memb ul li a.mb13 {
+	background-position: 0 -351px;
+}
+
+.memb ul li:hover {
+	background: #FFB9B9
+}
+
+.membUpdate.mine {
+	margin-bottom: 20px;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+	margin-bottom: 0;
+	margin-top: 0px;
+}
+
+.membUpdate a:link,.membUpdate a:visited {
+	color: #333;
+}
+
+.membUpdate a:hover {
+	color: #fb5e55
+}
+
+.memb ul li a:visited,.memb ul li a:link {
+	color: #3D3D3D;
+}
+
+.memb ul li a:hover {
+	color: #fff;
+}
+/***************END左侧菜单END****************/
+
+/**************个人中右侧样式***************/
+.mem-h3 {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 50px;
+	padding-top: 10px;
+}
+
+/*********************修改信息表单**********************/
+.tab_box ul {
+	min-height: 100px;
+}
+
+.uploadbtn {
+	margin-top: -10px;
+	padding: 2px 10px;
+}
+
+.uploadbtn.ub1 {
+	margin-top: 5px;
+	color: #fff;
+	width: 80px;
+	height: 25px;
+	background: #3eb0e0;
+	border: none;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+}
+
+.validtext {
+	color: #e41829;
+	font-size: 12px;
+}
+
+/**********************我的课程样式******************/
+.memb_course {
+	width: 780px;
+	margin: 0 auto;
+}
+
+.memb_course li {
+	display: block;
+	width: 260px;
+	min-height: 210px;
+	float: left;
+	margin-top: 10px;
+}
+
+.mpp {
+	background: #E6E6E6;
+	height: 15px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.lv {
+	height: 100%;
+	background: #3eb0e0;
+	border-radius: 5px;
+}
+
+.courseli {
+	width: 230px;
+	min-height: 100px;
+	margin: 0 auto;
+	background: #fff;
+	padding-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px #c5c5c5;
+	border: 1px solid #e8e8e8;
+}
+
+.courseli img {
+	border-radius: 3px 3px 0 0;
+	width: 230px;
+	height: 129px
+}
+
+.memb_courname {
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.goon {
+	text-align: center;
+	font-size: 14px;
+	height: 30px;
+	line-height: 35px;
+	margin-top: 5px;
+}
+
+.goon span {
+	background: #3eb0e0;
+	color: #fff;
+	padding: 3px 10px;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.qxsc {
+	float: right;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	line-height: 15px;
+	border-radius: 50%;
+	background: none repeat scroll 0 0 #3eb0e0;
+	margin-top: 2px;
+	cursor: pointer
+}
+
+.courseli.mysc {
+	position: relative
+}
+/*******************END我的课程END********************/
+
+/***********************我的笔记、我的问答***********************/
+.notelist.home {
+	margin-top: 10px;
+}
+
+.notelist p .edit {
+	padding-left: 20px;
+	background: url(../images/homepage/ico_detail_item.png) no-repeat;
+	font-size: 14px;
+}
+
+.notelist p .edit.e1 {
+	background-position: 0 -1920px;
+}
+
+.notelist p .edit.e2 {
+	background-position: 0 -1950px;
+}
+
+.notelist p .edit.e3 {
+	background-position: 0 -872px;
+}
+
+.edit:link,.edit:visited {
+	color: #FC6A62
+}
+
+.edit:hover {
+	color: #FC554B
+}
+
+.edit {
+	display: block;
+	margin-left: 20px;
+	float: right
+}
+
+.notelist.nl1 {
+	width: 100%
+}
+
+.askcont img {
+}
+
+.mbm {
+	font-size: 14px;
+}
+
+.mbm.mw {
+	background-position: 0 -1982px
+}
+
+.mbm.md {
+	background-position: 0 -2015px
+}
+
+.delete {
+	background: #FA5C53;
+	color: #fff;
+	padding: 2px 5px;
+	font-size: 12px;
+	border-radius: 3px;
+	float: right
+}
+
+.delete:hover {
+	background: #FF8080
+}
+/***************END我的笔记、我的问答END***************/
+
+
+.memdiv {
+	height: 100px;
+	line-height: 30px;
+	padding-top: 20px;
+}
+
+.memdiv h3 {
+	line-height: 25px;
+	font-size: 18px;
+}
+
+.mwidth h4 {
+	font-size: 14px;
+	color: #666
+}
+
+.memaskmem {
+	float: left;
+	margin-right: 20px;
+	font-size: 12px;
+	color: #666;
+	text-align: center
+}
+
+.memaskmem img {
+	margin-bottom: 10px;
+	border-radius: 50%
+}
+
+.memaskmem p {
+	height: 40px;
+	width: 68px;
+	overflow: hidden;
+	line-height: 20px;
+	margin-top: -10px
+}
+
+.mem_ask {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.mem_ask h3 {
+	font-size: 18px;
+}
+
+.mem-question {
+	display: block;
+	width: 600px;
+	margin-top: 15px;
+}
+
+.mem-question.mwidth {
+	width: 800px;
+}
+
+.mem_asklist {
+	min-height: 50px
+}
+
+.mem_asklist dt {
+	width: 700px;
+	float: left;
+	font-size: 15px;
+}
+
+.mem_asklist dd {
+	width: 100px;
+	float: right;
+	font-size: 12px;
+	color: #666;
+}
+
+.mem_asklist dd p {
+	font-size: 12px;
+}
+
+.memrow {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border-bottom: 1px dotted #E1E1E1
+}
+
+.eva {
+	padding-left: 30px;
+	margin-right: 50px;
+	background: url(../images/homepage/ico_detail_item.png) no-repeat;
+	font-size: 14px;
+}
+
+.eva.zan {
+	background-position: 0 -210px
+}
+
+.eva.cha {
+	background-position: 0 -275px
+}
+
+.eva:link,.eva:visited {
+	color: #FC6A62
+}
+
+.eva:hover {
+	color: #666
+}
+
+.memtextarea {
+	width: 100%;
+	border-radius: 5px
+}
+
+.mbm_btn {
+	display: block;
+	font-size: 16px;
+	width: 100px;
+	text-align: center;
+	background: #3eb0e0;
+	padding: 5px 10px;
+	color: #fff;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	float: right
+}
+
+.mbm_btn:hover {
+	color: #fff;
+	background: #75C7E6
+}
+
+.mbmlabel {
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.membUpdate.mas input[type="text"] {
+	border: 1px solid #ccc;
+	width: 350px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.membUpdate.mas td .short {
+	width: 200px;
+}
+
+.membUpdate.mas .uploadbtn {
+	border: none
+}
+
+.membUpdate.mas textarea {
+	width: 350px;
+	border-color: #ccc;
+}
+
+.memul {
+	padding-left: 40px;
+	padding-right: 40px;
+	width: 350px;
+	margin-left: 0;
+}
+
+.memul li {
+	width: 350px;
+	border-bottom: none;
+	margin-top: 0;
+	font-size: 14px;
+	text-align: left;
+	padding-bottom: 0;
+	padding-top: 0;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden
+}
+
+.memul li a {
+	padding-left: 20px;
+	background: url(../images/homepage/ico_detail_item.png) left center no-repeat;
+	background-position: 0 -465px;
+}
+
+/***************我的作业****************/
+.mbmlist {
+	text-align: left;
+	margin: 20px auto 0 50px;
+}
+
+.mbm1 a {
+	font-size: 14px;
+	line-height: 40px;
+}
+
+.mbm1 .gray {
+	font-size: 12px;
+}
+
+.mbm1 .blacklink {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+}
+
+.mbm_btn {
+	display: block;
+	width: 70px;
+	text-align: center;
+	background: #3eb0e0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #fff;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-size: 14px;
+}
+
+.mbm_btn.mpink {
+	background: #FF6A6A;
+	position: absolute;
+	font-size: 16px;
+	top: 130px;
+	right: 50px;
+	padding: 5px 10px
+}
+
+.mbm_btn.mpink:hover {
+	background: #FF9595
+}
+
+.mbm_btn:hover {
+	color: #fff;
+	background: #75C7E6
+}
+
+.mbmlist,.mbmlist1 {
+	text-align: left
+}
+
+.mbmlist td {
+	border-bottom: 1px solid #E4E4E4;
+	height: 70px;
+}
+
+.mbmlist1 td {
+	border-bottom: 1px solid #E4E4E4;
+	height: 50px;
+}
+
+.no_btn {
+	background: none repeat scroll 0 0 #ccc
+}
+
+.no_btn:hover {
+	color: #fff;
+	background: #ccc
+}
+/*****************END我的作业END*******************/
+
+/************************我的问答**************************/
+.blacklink:link,.blacklink:visited {
+	color: #333;
+}
+
+.blacklink:hover {
+	color: #fb5e55
+}
+
+.blacklink.blocklink {
+	display: block;
+	height: 59px;
+	min-width: 100px;
+	line-height: 59px;
+}
+
+.asklabel {
+	display: inline-block;
+	width: 80px;
+	padding-right: 10px;
+	overflow: hidden;
+	font-weight: normal
+}
+
+.hwtit:link, .hwtit:visited {
+	color: #999;
+}
+
+.hwtit:hover {
+	color: #fb5e55;
+}
+/*****************END我的问答END*******************/
+
+/***************弹出层****************/
+.mask {
+	background: url("../images/background/bg4.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+	display: none;
+	height: 25px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 12;
+}
+
+
+

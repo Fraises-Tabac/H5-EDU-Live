@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>控制台</title>
+		<link rel="stylesheet" href="../stat/assets/css/layui.css">
+		<style>
+			.layui-unselect {
+				display: table;
+				margin-top: 10px;
+			}
+			
+			.result {
+				width: 300px;
+			}
+			
+			.result .layui-form-item {
+				height: 300px;
+				overflow: auto;
+				margin-bottom: 0;
+			}
+			
+			.fl {
+				float: left;
+			}
+			
+			.sele {
+				margin-top: 100px;
+				margin-right: 10px;
+			}
+			
+			.sele button {
+				display: block;
+			}
+			
+			.sele button:nth-child(2) {
+				margin-top: 10px;
+				margin-left: -1px;
+			}
+			.result1{
+				margin-top: -10px;
+			}
+			table tr{
+				border:;
+			}
+			table  td{
+				border: none;
+			}
+			.layui-table td{
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="padding: 15px;" class="layui-anim layui-anim-upbit">
+
+			<fieldset class="layui-elem-field">
+				<legend>表单</legend>
+				<div class="layui-field-box">
+					<form class="layui-form fl" action="">
+						<div class="layui-form-item">
+							<div class="layui-inline">
+								<label class="layui-form-label">请选择姓名</label>
+								<div class="layui-input-inline">
+									<select name="modules" lay-verify="required" lay-search>
+										<option value="1">layer</option>
+										<option value="2">form</option>
+										<option value="3">layim</option>
+										<option value="4">element</option>
+										<option value="5">laytpl</option>
+										<option value="6">upload</option>
+										<option value="7">laydate</option>
+										<option value="8">laypage</option>
+										<option value="9">flow</option>
+										<option value="10">util</option>
+										<option value="11">code</option>
+										<option value="12">tree</option>
+										<option value="13">layedit</option>
+										<option value="14">nav</option>
+										<option value="15">tab</option>
+										<option value="16">table</option>
+										<option value="17">select</option>
+										<option value="18">checkbox</option>
+										<option value="19">switch</option>
+										<option value="20">radio</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<fieldset class="layui-elem-field result">
+							<!--<div class="layui-form-item">
+								<div class="layui-input-block">
+									<input type="checkbox" name="like[write]" title="写作">
+									<input type="checkbox" name="like[read]" title="阅读">
+									<input type="checkbox" name="like[game]" title="游戏">
+								</div>
+							</div>-->
+							<div class="layui-form-item" pane="">
+								
+								<div class="layui-form" style="width: 100%;">
+									<table class="layui-table result1">
+										<thead>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" title="全选">
+												</td>
+											</tr>
+										</thead>
+										<tbody class="role_list">
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose"  title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1" disabled="">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					<div class="fl sele">
+						<button class="layui-btn layui-btn-disabled">></button>
+						<button class="layui-btn layui-btn-disabled"><</button>
+					</div>
+					<form class="layui-form fl" action="">
+						<div class="layui-form-item">
+							<div class="layui-inline">
+								<label class="layui-form-label">请选择姓名</label>
+								<div class="layui-input-inline">
+									<select name="modules" lay-verify="required" lay-search>
+										<option value="1">layer</option>
+										<option value="2">form</option>
+										<option value="3">layim</option>
+										<option value="4">element</option>
+										<option value="5">laytpl</option>
+										<option value="6">upload</option>
+										<option value="7">laydate</option>
+										<option value="8">laypage</option>
+										<option value="9">flow</option>
+										<option value="10">util</option>
+										<option value="11">code</option>
+										<option value="12">tree</option>
+										<option value="13">layedit</option>
+										<option value="14">nav</option>
+										<option value="15">tab</option>
+										<option value="16">table</option>
+										<option value="17">select</option>
+										<option value="18">checkbox</option>
+										<option value="19">switch</option>
+										<option value="20">radio</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<fieldset class="layui-elem-field result">
+							
+							<div class="layui-form-item" pane="">
+								<div class="layui-form" style="width: 100%;">
+									<table class="layui-table result1">
+										<thead>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" title="全选">
+												</td>
+											</tr>
+										</thead>
+										<tbody class="role_list">
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose"  title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="checkbox" name="" lay-skin="primary" lay-filter="itemChoose" title="1" disabled="">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+
+				</div>
+			</fieldset>
+
+		</div>
+	</body>
+	<script src="layui/layui.js"></script>
+	<script src="js/jquery.js"></script>
+	<script>
+		//JavaScript代码区域
+		layui.use(['element', 'layer', 'form', 'laydate'], function() {
+			var element = layui.element;
+			var layer = layui.layer;
+			var form = layui.form;
+			var laydate = layui.laydate;
+			//一些事件监听
+			laydate.render({
+				elem: '#date'
+			});
+			//监听提交
+			form.on('submit(formDemo)', function(data) {
+				layer.msg(JSON.stringify(data.field));
+				return false;
+			});
+			form.on('checkbox(allChoose)', function(data) {
+				var child = $(data.elem).parents('table').find('tbody input[type="checkbox"]');
+				child.each(function(index, item) {
+					item.checked = data.elem.checked;
+				});
+				form.render('checkbox');
+			});
+			//		form.on('checkbox(itemChoose)', function(data) {
+			//			var sib = $(data.elem).parents('table').find('tbody input[type="checkbox"]:checked').length;
+			//			var total = $(data.elem).parents('table').find('tbody input[type="checkbox"]').length;
+			//			if(sib == total) {
+			//				$(data.elem).parents('table').find('thead input[type="checkbox"]').prop("checked", true);
+			//				form.render();
+			//			} else {
+			//				$(data.elem).parents('table').find('thead input[type="checkbox"]').prop("checked", false);
+			//				form.render();
+			//			}
+			//		});
+
+		});
+		
+	</script>
+
+
+</html>

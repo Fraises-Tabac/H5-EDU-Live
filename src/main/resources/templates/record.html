@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Elearning在线测评与学习平台</title>
+        <script src="/stat/assets/js/jquery-1.8.0.min.js"></script>
+        <script src="/stat/assets/js/mine.js"></script>
+        <script src="/stat/assets/js/jquery.tabs.js"></script>
+        <!-- video.js must be in the <head> for older IEs to work. -->
+        <link rel="stylesheet" href="/stat/assets/css/video-js.css">
+        <link rel="stylesheet" href="/stat/assets/css/course.css"/>
+        <link rel="stylesheet" href="/stat/assets/css/tab.css" media="screen">
+
+        <style>
+            #vi{
+                height:550px !important;
+            }
+        </style>
+        <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+        <script type="text/javascript">
+            $(function () {
+                $('.demo2').Tabs({
+                    event: 'click'
+                });
+            });
+        </script>
+        <style>
+            body {
+                overflow: hidden;
+                scrollbar-base-color: #fff;
+                scrollbar-arrow-color: #fff; /*三角箭头的颜色*/
+                scrollbar-face-color: #333; /*立体滚动条的颜色（包括箭头部分的背景色）*/
+                scrollbar-3dlight-color: #fff; /*立体滚动条亮边的颜色*/
+                scrollbar-highlight-color: #fff; /*滚动条的高亮颜色（左阴影？）*/
+                scrollbar-shadow-color: #fff; /*立体滚动条阴影的颜色*/
+                scrollbar-darkshadow-color: #fff; /*立体滚动条外阴影的颜色*/
+                scrollbar-track-color: #fff; /*立体滚动条背景颜色*/
+            }
+
+            /* 设置滚动条的样式 */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* 滚动槽 */
+            ::-webkit-scrollbar-track {
+                border-radius: 0
+            }
+
+            /* 滚动条滑块 */
+            ::-webkit-scrollbar-thumb {
+                background: #333;
+
+            }
+
+            ::-webkit-scrollbar-thumb:window-inactive {
+                background: rgba(255, 0, 0, 0.4);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="linevideo" style="overflow-x: hidden; margin: 0 auto;">
+            <span class="returnindex"><a id="back" class="gray" style="font-size:14px;">返回课程</a></span>
+            <span class="taskspan"><b id="courseName" class="tasktit"></b></span>
+            <div style="width:100%">
+                <video width="auto" id="vi" class="video-js vjs-default-skin  vjs-big-play-centered vvi " controls
+                       preload="none" data-setup="{}">
+                    <source id="source"/>
+                </video>
+            </div>
+        </div>
+
+        <script>
+            let url = window.location.href;
+            let index = url.lastIndexOf("=");
+            let courseId = parseInt(url.slice(index + 1));
+            $.ajax({
+                url: "/course/info",
+                type: "post",
+                data: {"courseId": courseId},
+                dataType: "json",
+                success: function (course) {
+                    let path = course.video;
+                    let extension = path.slice(path.lastIndexOf(".") + 1);
+                    $("#vi").attr("poster", course.pic);
+                    $("#source").attr("src", path);
+                    $("#source").attr("type", "video/" + extension);
+                    $("#courseName").text(course.name);
+                    $("#back").attr("href", "/course?courseId=" + courseId);
+
+                },
+                error: function (XMLHttpRequest, textStatus) {
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                }
+            });
+        </script>
+        <script src="/stat/assets/js/video.js"></script>
+        <script>
+            videojs.options.flash.swf = "/stat/video-js.swf";
+        </script>
+    </body>
+</html>

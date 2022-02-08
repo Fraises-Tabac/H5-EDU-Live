@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>控制台</title>
+		<link rel="stylesheet" href="../stat/assets/css/layui.css">
+	</head>
+
+	<body>
+		<!-- 内容主体区域 -->
+		<div style="padding: 15px;" class="layui-anim layui-anim-upbit">
+
+			<fieldset class="layui-elem-field layui-field-title">
+				<legend>管理</legend>
+			</fieldset>
+
+			<div class="layui-tab layui-tab-brief" lay-filter="demo">
+				<ul class="layui-tab-title">
+					<li class="layui-this">待定内容区</li>
+				</ul>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show">
+						<fieldset class="layui-elem-field">
+							<legend>搜索</legend>
+							<div class="layui-row">
+								<div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+									<div class="layui-form-item">
+										<label class="layui-form-label">禁言用户</label>
+										<div class="layui-input-block">
+											<input type="text" name="title" required lay-verify="required" placeholder="请输入用户id或手机号" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</div>
+								<div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+
+									<button class="layui-btn" style="margin-left: 10px;">搜索</button>
+
+								</div>
+							</div>
+						</fieldset>
+						<button class="layui-btn" onclick="query()"><i class="layui-icon">&#xe608;</i> 添加禁言</button>
+						<hr>
+						<table class="layui-table" lay-size="sm">
+							<colgroup>
+								<col width="150">
+								<col width="200">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>id</th>
+									<th>手机号</th>
+									<th>违规内容</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script src="../stat/assets/js/layui.js"></script>
+	<script>
+		layui.use(['element', 'layer', 'laydate','table'], function() {
+			var element = layui.element;
+			var layer = layui.layer;
+			var laydate = layui.laydate;
+			 var table = layui.table;
+			/*一些事件监听
+			element.on('tab(demo)', function(data) {
+				layer.msg('切换了：' + this.innerHTML);
+
+			});*/
+			//执行一个laydate实例
+			laydate.render({
+				elem: '#ceshiDate' //指定元素
+			});
+
+		});
+	</script>
+	<!--查询可以成功吗-->
+	<script>
+		import * as $ from "../stat/assets/js/jquery-1.10.2";
+		function query() {
+			$.ajax({
+				type:"post",
+				url:"/hello",
+				data:{
+
+				},
+				dataType:"json",
+				success:function (resp) {
+					showResult(resp);
+				},
+				error:function () {
+					alert("")
+				}
+			})
+		}
+		function showResult(result) {
+			var target = $(".main .content tbody");
+			target.html("");
+			for (var user of result){
+				var str ="<tr>"
+						+"<td>"+user.id+"</td>"
+						+"<td>"+user.number+"</td>"
+						+"<td>"+user.content+"</td>"
+						+"</tr>";
+				target.append(str);
+			}
+			if (result.length>0){
+				$(".main .content .empty").hide();
+			}else {
+				$(".main .content .empty").show();
+			}
+		}
+	</script>
+</html>

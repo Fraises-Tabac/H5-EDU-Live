@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>论坛首页</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../stat/assets/css/reset.css"/>
+    <link rel="stylesheet" href="../stat/assets/css/global.css"/>
+</head>
+<body style="background-color: #f4f4f4;">
+    <script>
+        function Refresh() {
+            window.location.reload();
+        }
+        setTimeout('Refresh()',60000); //1min刷新一次
+        $("indexBtn").onclick(
+            function indexBtnClick() {
+                $.ajax({
+                    type:"post",
+                    url:"index.html",
+                    data:"research",
+                    dataType: "json",
+                    success:function(result){
+                        $("#div1").html(result);
+                    },
+                    error: function () {
+                            $.alert("网络异常");
+                    }
+                });
+            });
+        //
+        $("latest").onclick(function goUrl() {
+            var url="index,html";
+            location.href=url;
+            });
+
+    </script>
+    <div class="inHead">
+            <div class="inHead_inner center">
+                <a href=""><img src="../stat/assets/images/communityimg/logo.png" alt="" class="indexPic1"/></a>
+                <div class="indexSearch">
+                    <input  type="text" placeholder="请输入关键词......" name="search"/>
+                    <input type="button" name="indexBtn"/>
+                </div>
+            </div>
+        </div>
+    <div class="indexTable">
+        <ul >
+            <li id="hot" class="on">热门</li>
+            <li  id="latest">最新</li>
+            <li id="follow">关注</li>
+        </ul>
+    </div>
+    <div style="width: 100%;height: 81px"></div>
+    <div class="indexTable_con" style="display: block">
+        <div class="indexTable_son">
+            <a href="">
+                <div class="indexTable_sonHead">
+                    <div class="inHeadPic">
+                        <img src="../stat/assets/images/communityimg/cs.png" alt=""/>
+                    </div>
+                    <p id="author"><a href="ta.html">坦诚相待</a></p>
+                    <span >精华</span>
+                    <span>置顶</span>
+                </div>
+            </a>
+            <a href="">
+                <div class="indexTableCon">
+                    <h1 id="localTitle">广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                    <p id="mBody">拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+                </div>
+            </a>
+            <ul class="indexTable_conFoot clearfix">
+                <li id="heat">热度<span>77</span></li>
+                <li id="respondList"><a href="lt_content.html">评论</a><span>num</span></li>
+                <li id="latestTime">最新回复时间<span>00</span></li>
+                <li id="pubTime">发布时间</li>
+            </ul>
+        <div style="width: 100%;height: 50px"></div>
+        <div class="footBar">
+            <a href="community.html">
+                <div class="footBar_pic">
+                    <img src="../stat/assets/images/communityimg/footIcon1.png" alt=""/>
+                </div>
+                <p class="on">首页</p>
+            </a>
+            <a href="write.html">
+                <div class="footBar_pic">
+                    <img src="../stat/assets/images/communityimg/footIcon2_hover.png" alt=""/>
+                </div>
+                <p >发贴</p>
+            </a>
+            <a href="me.html">
+                <div class="footBar_pic">
+                    <img src="../stat/assets/images/communityimg/footIcon3_hover.png" alt=""/>
+                </div>
+                <p>我的</p>
+            </a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+<script src="../stat/assets/js/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+<script>
+    $(".indexTable li").click(function(){
+        var indexs=$(this).index();
+        $(".indexTable li").removeClass("on").eq(indexs).addClass("on");
+        $(".indexTable_con").hide().eq(indexs).show();
+    })
+</script>
+
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/dwt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Elearning在线测评与学习平台</title>
+    <link rel="stylesheet" href="../stat/assets/css/course.css"/>
+    <link rel="stylesheet" href="../stat/assets/css/member.css"/>
+    <link rel="stylesheet" href="../stat/assets/css/setting.css"/>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="../stat/assets/js/jquery-3.4.1.min.js"></script>
+    <script>if (window.module) module = window.module;</script>
+    <link rel="stylesheet" href="../stat/assets/css/tab.css" media="screen">
+    <script type="text/javascript" src="../stat/assets/js/distpicker.data.min.js"></script>
+    <script type="text/javascript" src="../stat/assets/js/distpicker.min.js"></script>
+    <script type="text/javascript" src="../stat/assets/js/main.js"></script>
+    <script src="../stat/assets/js/jquery.tabs.js"></script>
+    <script src="../stat/assets/js/mine.js"></script>
+    <script src="../stat/assets/js/setting.js"></script>
+    <script src="../stat/assets/js/zone.js"></script>
+    <script src="../stat/assets/js/jquery.time.js"></script>
+    <script src="../stat/assets/js/jquery.birthday.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ms_DatePicker({
+                YearSelector: "#select_year", //年id
+                 MonthSelector: "#select_month",//月id
+               DaySelector: "#select_day"  //日id
+           });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $('.demo2').Tabs({
+                event:'click'
+            });
+        });
+    </script>
+    <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+
+</head>
+
+<body>
+
+<div class="head" id="fixed">
+    <div class="nav">
+        <span class="navimg"><a href="index.html"><img border="0" src="../stat/assets/images/logo/logo.png"></a></span>
+        <ul class="nag">
+            <li><a href="courselist.html" class="link1 current">课程</a></li>
+            <li><a href="articlelist.html" class="link1">资讯</a></li>
+            <li><a href="teacherlist.html" class="link1">讲师</a></li>
+            <li><a href="exam_index.html" class="link1" target="_blank">题库</a></li>
+            <li><a href="askarea.html" class="link1" target="_blank">问答</a></li>
+        </ul>
+        <span class="massage">
+        	<span class="exambtn_lore">
+                 <a class="tkbtn tklog" href="login1.html">登录</a>
+                 <a class="tkbtn tkreg" href="register.html">注册</a>
+            </span>
+        </span>
+    </div>
+</div>
+<!-- InstanceBeginEditable name="EditRegion1" -->
+<div class="clearh"></div>
+<div class="membertab">
+    <div class="memblist">
+        <div class="membhead">
+            <div style="text-align:center;"><img src="assets/images/0-0.JPG" width="80" ></div>
+            <div style="width:220px;text-align:center;">
+                <p class="membUpdate mine">某某某</p>
+                <div class="clearh"></div>
+            </div>
+        </div>
+
+        <div class="memb">
+            <ul>
+                <li class="currnav"><a class="mb1" href="mycourse.html">我的课程</a></li>
+                <li><a class="mb3" href="myQ_A.html">我的问答</a></li>
+                <li><a class="mb4" href="myTests.html">我的考试</a></li>
+                <li><a class="mb12" href="mySetting.html">个人信息</a></li>
+                <li><a class="mb2" href="myRepassword.html" target="_blank">修改密码</a></li>
+            </ul>
+        </div>
+    </div>
+<!--弹窗修改个人信息-->
+    <div id="cover"> </div>
+    <div class="membcont">
+        <div id="editDiv" >
+            <div class="edit_top">
+                 <h3 class="edition"> 编辑个人信息</h3>
+            </div>
+            <div class="edit_frame">
+            <form>
+                <div>
+                    <label class="nickname">昵称</label>
+                    <input type="text" id="nickname">
+                </div>
+                <div>
+                     <label class="gender">性别</label>
+                     <input type="radio" name="gender" value="male"/><label class="option">男</label>
+                     <input type="radio" name="gender" value="female"/><label class="option">女</label>
+                </div>
+                <div>
+                    <label class="gender">职业</label>
+                    <input type="radio" name="profession" value="student"/><label class="option">学生</label>
+                    <input type="radio" name="profession" value="teacher"/><label class="option">教师</label>
+                    <a  href="#"  onclick="teacherApplication()"><label class="option">申请做教师</label></a>
+                </div>
+              <!--选择出生日期-->
+                <div>
+                    <label class="birthday">生日</label>
+                    <select id="select_year" name="YYYY"></select><label class="option">年</label>
+                    <select id="select_month" name="MM" ></select><label class="option">月</label>
+                    <select id="select_day" name="DD"> </select><label class="option">日</label>
+                </div>
+                <!--选择所在地-->
+                <div data-toggle="distpicker" id="#distpicker">
+                    <label class="zone">地区</label>
+                    <select id="eprovinceName" name="provinceName" style="width: 70px"></select>
+                    <select id="ecityName" name="cityName" style="width: 70px"></select>
+                    <select id="edistrictName" name="districtName" style="width: 70px"></select>
+                </div>
+
+                <!--添加个人简介-->
+                <div>
+                    <form>
+                    <label class="profile">个性签名</label>
+                    <textarea type="text" rows="3" cols="28" id="mod_profile" onkeyup="numChange()">
+                    </textarea>
+                    <div id="words_limit">您还可以输入<span id="count">200</span>字</div>
+                    </form>
+                </div>
+                <div id="editBottom">
+                     <button type="submit" id="save" onclick="save()">保存</button>
+                     <button type="submit" id="close" onclick="hideEditDiv()">取消</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+<!--显示个人信息-->
+        <div class="mem-h3">
+            <h3>个人信息</h3>
+            <a id="edit" href="javascript:void(0)" onclick= "showEditDiv()">编辑</a>
+        </div>
+        <div class="info-wapper">
+            <div class="info-box">
+                <label class="pull-left">昵称</label>
+                <div class="pull-left" id="Name">qq_精慕门7456764</div>
+            </div>
+            <div class="info-box">
+                <label class="pull-left">职业</label>
+                <div class="pull-left" id="Major">老师</div>
+            </div>
+            <div class="info-box">
+                <label class="pull-left">性别</label>
+                <div class="pull-left" id="Gender">未设置</div>
+            </div>
+            <div class="info-box">
+                <label class="pull-left">生日</label>
+                <div class="pull-left" id="Birthday">未设置</div>
+            </div>
+            <div class="info-box">
+                <label class="pull-left">城市</label>
+                <div class="pull-left" id="Zone">未设置</div>
+            </div>
+            <div class="info-box">
+                <label class="pull-left">个性签名</label>
+                <div class="pull-left" id="Profile">未设置</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- InstanceEndEditable -->
+
+<!--右侧浮动-->
+<div class="rmbar">
+	<span class="barico qq" style="position:relative">
+	<div  class="showqq">
+	   <p>官方客服QQ:<br>335049335</p>
+	</div>
+	</span>
+    <span class="barico em" style="position:relative">
+	  <img src="assets/images/num.png" width="75" class="showem">
+	</span>
+    <span class="barico wb" style="position:relative">
+	  <img src="assets/images/wb.png" width="75" class="showwb">
+	</span>
+    <span class="barico top" id="top">置顶</span>
+</div>
+</body>
+
+<!-- InstanceEnd --></html>

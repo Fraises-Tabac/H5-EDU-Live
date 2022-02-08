@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css"/>
+    <link rel="stylesheet" href="assets/css/global.css"/>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+</head>
+<body style="background-color: #f4f4f4;">
+<div class="writeHead">
+    <div class="writeHead_top center">
+        <a href=""><img src="assets/images/communityImage/backIcon.png" alt="" class="backBtn"/></a>
+        <h1>搜索</h1>
+        <div class="indexSearch" style="margin-top:7px;">
+            <input type="text" placeholder="请输入关键词......" name="search"/>
+            <input type="button" name="indexBtn"/>
+        </div>
+    </div>
+</div>
+<div style="width: 100%;height: 47px"></div>
+<div id="coursesearch" class="indexTable_con" style="display: block">
+    <!--<div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/images/communityImage/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/images/communityImage/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/images/communityImage/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/images/communityImage/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+</div>
+<div class="indexTable_con">
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待2</p>
+                <span>精华</span>
+                <span>置顶</span>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+</div>
+<div class="indexTable_con">
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待3</p>
+                <span>精华</span>
+                <span>置顶</span>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>
+    <div class="indexTable_son">
+        <a href="">
+            <div class="indexTable_sonHead">
+                <div class="inHeadPic">
+                    <img src="assets/img/cs.png" alt=""/>
+                </div>
+                <p>坦诚相待</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="indexTableCon">
+                <h1>广州4月19号举行限外听证会！2018年是否会实行车牌限行？</h1>
+                <p>拍王深耕广州竞价3年，最近听到很多广州即将限行的消息。作为一个一线城市，广州是唯一一个没有限行的城市。所以拍王预测，2018年，所以拍王预测，2018年广州限行的正式方案应该会出炉...</p>
+            </div>
+        </a>
+        <ul class="indexTable_conFoot clearfix">
+            <li>收藏<span>77</span></li>
+            <li>评论<span>33</span></li>
+            <li>查看<span>88</span></li>
+            <li>10分钟前</li>
+        </ul>
+    </div>-->
+</div>
+<script>
+    let url = window.location.href;
+    let index = url.lastIndexOf("?");
+    let param = url.slice(index + 1);
+    // param = "keyswords=xxx&type=xxx"
+    let params = param.split("&");
+    //params = ["keywords=xxx", "type=xxx"]
+    let keywords = params[0].slice(params[0].indexOf("=") + 1);
+    let type = params[1].slice(params[1].indexOf("=") + 1);
+    $.ajax({
+        url: "/search/" + type,
+        data: keywords,
+        dataType: "text",
+        contentType: "application/json",
+        success:function(resultList){
+            //var searchUI = $("#coursesearchul");
+            for (let result in resultList)
+                $("#coursesearch").append("<li><div class='indexTable_con' style='display: block'>" +
+                    "<div class='indexTable_son'"+
+                    "<a href=''>" +
+                    "<div class='indexTable_sonHead'>" +
+                    "<div class='inHeadPic'><img src='"+result.coursePic+"'></div>" +
+                    "<p>"+result.lecture+"</p></div></a>" +
+                    "<a href='/result/'>" +
+                    "<div class='indexTableCon'>" +
+                    "<h1>"+result.name+"</h1>" +
+                    "<p>"+result.coursepage+"</p></div></a></div></div></li>");
+        },
+        error: function (XMLHttpRequest, textStatus) {
+            console.log(XMLHttpRequest.status);
+            console.log(XMLHttpRequest.readyState);
+            console.log(textStatus);
+        }
+    });
+
+    /*var result={};
+    result.coursePic="assets/images/course/c3.jpg";
+    result.name="碎碎";
+    result.lecture="hello";
+    result.coursepage="说到哪所看到那可说的那可是ksankandska.snd,asnd就，没事能打死的那可真是你的打算";
+    //var searchrerult = $("#coursesearch");
+    $("#coursesearch").append("<li><div class='indexTable_con' style='display: block'>" +
+        "<div class='indexTable_son'"+
+        "<a href=''>" +
+        "<div class='indexTable_sonHead'>" +
+        "<div class='inHeadPic'><img src='"+result.coursePic+"'></div>" +
+        "<p>"+result.lecture+"</p></div></a>" +
+        "<a href='coursecont.html'>" +
+        "<div class='indexTableCon'>" +
+        "<h1>"+result.name+"</h1>" +
+        "<p>"+result.coursepage+"</p></div></a></div></div></li>");*/
+</script>
+</body>
+</html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>

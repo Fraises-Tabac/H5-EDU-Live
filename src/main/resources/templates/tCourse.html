@@ -1,0 +1,215 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/dwt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+    <meta charset="utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Elearning在线测评与学习平台</title>
+    <link rel="stylesheet" href="../stat/assets/css/course.css"/>
+    <link rel="stylesheet" href="../stat/assets/css/member.css"/>
+    <script src="../stat/assets/js/jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" href="../stat/assets/css/tab.css" media="screen">
+    <script src="../stat/assets/js/jquery.tabs.js"></script>
+    <script src="../stat/assets/js/mine.js"></script>
+    <script src="../stat/assets/js/tCourses.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.demo2').Tabs({
+                event:'click'
+            });
+        });
+    </script>
+    <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+
+</head>
+
+<body>
+<div class="head" id="fixed">
+    <div class="nav">
+        <span class="navimg"><a href="index.html"><img border="0" src="../stat/assets/images/logo/logo.png"></a></span>
+        <ul class="nag">
+            <li><a href="courselist.html" class="link1 current">课程</a></li>
+            <li><a href="articlelist.html" class="link1">资讯</a></li>
+            <li><a href="teacherlist.html" class="link1">讲师</a></li>
+            <li><a href="exam_index.html" class="link1" target="_blank">题库</a></li>
+            <li><a href="askarea.html" class="link1" target="_blank">问答</a></li>
+        </ul>
+        <span class="massage">
+            <!--<span class="select">
+        	<a href="#" class="sort">课程</a>
+        	<input type="text" value="关键字"/>
+            <a href="#" class="sellink"></a>
+            <span class="sortext">
+            	<p>课程</p>
+                <p>题库</p>
+                <p>讲师</p>
+            </span>
+        </span>-->
+            <!--未登录-->
+        	<span class="exambtn_lore">
+                 <a class="tkbtn tklog" href="login1.html">登录</a>
+                 <a class="tkbtn tkreg" href="register.html">注册</a>
+            </span>
+            <!--登录后-->
+            <!--<div class="logined">
+                <a href="mycourse.html"  onMouseOver="logmine()" style="width:70px" class="link2 he ico" target="_blank">sherley</a>
+                <span id="lne" style="display:none" onMouseOut="logclose()" onMouseOver="logmine()">
+                    <span style="background:#fff;">
+                        <a href="mycourse.html" style="width:70px; display:block;" class="link2 he ico" target="_blank">sherley</a>
+                    </span>
+                    <div class="clearh"></div>
+                    <ul class="logmine" >
+                        <li><a class="link1" href="#">我的课程</a></li>
+                        <li><a class="link1" href="#">我的题库</a></li>
+                        <li><a class="link1" href="#">我的问答</a></li>
+                        <li><a class="link1" href="#">退出</a></li>
+                    </ul>
+                </span>
+            </div>-->
+        </span>
+    </div>
+</div>
+<!-- InstanceBeginEditable name="EditRegion1" -->
+<div class="clearh"></div>
+<div class="membertab">
+    <div class="memblist">
+        <div class="membhead">
+            <div style="text-align:center;"><img src="assets/images/0-0.JPG" width="80" ></div>
+            <div style="width:220px;text-align:center;">
+                <p class="membUpdate mine">某某某</p>
+                <div class="clearh"></div>
+            </div>
+        </div>
+        <div class="memb">
+            <ul>
+                <li class="currnav"><a class="mb1" href="tCourse.html">我的课程</a></li>
+                <li><a class="mb3" href="myQ_A.html">我的问答</a></li>
+                <li><a class="mb4" href="tTests.html">我的考试</a></li>
+                <li><a class="mb12" href="mySetting.html">个人信息</a></li>
+                <li><a class="mb2" href="myRepassword.html" target="_blank">修改密码</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="membcont">
+        <h3 class="mem-h3">我的课程</h3>
+        <div class="box demo2" style="width:820px;">
+            <button type="submit" id="upload" style="margin-right:30px;" onclick="showEditDiv()">发布新课程</button>
+
+<!--显示已发布的课程-->
+            <div class="tab_box">
+                <div>
+                    <ul class="memb_course" id="publicCourse">
+                    </ul>
+                </div>
+            </div>
+
+            <!--发布新课程-->
+            <div id="publishDiv" >
+                <div class="publish_top">
+                    <h3 class="edition"> 填写课程信息</h3>
+                </div>
+                <div class="publish_frame">
+                    <form>
+                        <!--                    名称-->
+                        <div>
+                            <label class="name">课程名称</label><label style="color: red">*</label>
+                            <input type="text" id="name_box">
+                        </div>
+                        <!--                    标签——下划线形式-->
+                        <div>
+                            <label class="label">添加标签</label><label style="color: red">*</label>
+                            <input type="text" id="label_box">
+                        </div>
+                        <!--                    时长-->
+                        <div>
+                            <label class="duration">课程时长</label><label style="color: red">*</label>
+                            <input type="text" id="duration_box"><label>min</label>
+                        </div>
+                        <!--课程简介-->
+                        <div>
+                            <label class="profile">课程简介</label><label style="color: red">*</label>
+                            <textarea type="text" rows="4" cols="30" id="mod_profile" onkeyup="numChange()">
+                            </textarea>
+                            <div id="words_limit">您还可以输入<span id="count">300</span>字</div>
+                        </div>
+                        <!--                    方式选择-->
+                        <div>
+                            <form id="style">
+                                <label class="ifLive">教学方式</label><label style="color: red">*</label>
+                                <input type="radio" name="course" value="live" onclick="ifLive()"><label>直播</label>
+                                <input type="radio" name="course" value="video"><label>录播</label>
+                            </form>
+                        </div>
+                        <!--                    上传图片-->
+                        <div>
+                            <form id="imgFile">
+                                <label class="image">上传图片</label><label class="video_lab"></label>
+                                <input type="file" name="file" id="picture" accept="image">
+                            </form>
+                        </div>
+                        <!--                    上传视频-->
+                        <div>
+                            <form id="videoFile">
+                                <label class="video">上传视频</label>
+                                <input type="file" name="file" id="video" accept="video">
+                            </form>
+                        </div>
+
+                        <div id="publishBottom">
+                            <button type="submit" id="save" onclick="save()">提交</button>
+                            <button type="submit" id="close" onclick="hideEditDiv()">取消</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+    </div>
+    <div class="clearh"></div>
+</div>
+
+<!--尾部-->
+    <div class="clearh">
+    <div class="foot">
+        <div class="fcontainer">
+            <div class="fwxwb">
+                <div class="fwxwb_1">
+                    <span>关注微信</span><img width="95" alt="" src="assets/images/num.png">
+                </div>
+                <div>
+                    <span>关注微博</span><img width="95" alt="" src="assets/images/wb.png">
+                </div>
+            </div>
+            <div class="fmenu">
+                <p><a href="#">关于我们</a> | <a href="#">联系我们</a> | <a href="#">优秀讲师</a> | <a href="#">帮助中心</a> | <a href="#">意见反馈</a> | <a href="#">加入我们</a></p>
+            </div>
+            <div class="copyright">
+                <div><a href="/">谋刻网</a>所有&nbsp;晋ICP备12006957号-9</div>
+            </div>
+        </div>
+    </div>
+    </div>
+<!-- InstanceEndEditable -->
+
+<!--右侧浮动-->
+<div class="rmbar">
+	<span class="barico qq" style="position:relative">
+	<div  class="showqq">
+	   <p>官方客服QQ:<br>335049335</p>
+	</div>
+	</span>
+    <span class="barico em" style="position:relative">
+	  <img src="assets/images/num.png" width="75" class="showem">
+	</span>
+    <span class="barico wb" style="position:relative">
+	  <img src="assets/images/wb.png" width="75" class="showwb">
+	</span>
+    <span class="barico top" id="top">置顶</span>
+</div>
+</div>
+</body>
+
+<!-- InstanceEnd -->
+</html>
